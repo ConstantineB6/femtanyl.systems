@@ -1,0 +1,9 @@
+# workspace-local build artefacts
+target
+client/target
+client/dist
+client/pkg
+# tooling noise
+.git
+.DS_Store
+*.log

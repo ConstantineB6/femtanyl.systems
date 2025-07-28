@@ -1,0 +1,40 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = [
+  "Window",
+  "Document",
+  "HtmlCanvasElement",
+  "HtmlElement",
+  "CssStyleDeclaration",
+  "CanvasRenderingContext2d",
+  "PointerEvent",
+
+  # Audio
+  "AudioContext",
+  "AudioContextState",
+  "OscillatorNode",
+  "OscillatorType",
+  "GainNode",
+  "AudioNode",
+  "AudioParam",
+  "AudioDestinationNode",
+
+  # Audio - Filters
+  "BiquadFilterNode",
+  "BiquadFilterType",
+
+  # Sockets
+  "WebSocket",
+] }
+gloo = { version = "0.11", features = ["events"] }
+serde = { version = "1.0", features = ["derive"] }
+shared = { path = "../shared" }
+serde_json = "1.0.141"
